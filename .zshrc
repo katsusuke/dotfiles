@@ -68,8 +68,8 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 # keys
-if [ -f ~/.keys ]; then
-    source ~/.keys
+if [ -f ~/.private.zsh ]; then
+    source ~/.private.zsh
 fi
 
 # envs
