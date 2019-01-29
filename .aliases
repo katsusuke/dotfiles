@@ -1,0 +1,21 @@
+alias ls='gls --color'
+alias ll='gls -l --color'
+alias la='gls -a --color'
+alias lla='gls -la --color'
+alias emacs='emacs -nw'
+alias xargs='gxargs'
+alias r='rails'
+alias be='bundle exec'
+alias ber='bundle exec rails'
+alias rrg='find . -path ./.git -prune -type f -o -path ./log -prune -type f -o -path ./tmp -prune -type f -o -path ./db -prune -type f -o -type f -print0|xargs -0 grep'
+alias g='git'
+alias doc='docker'
+if [[ -x `which colordiff` ]]; then
+   alias diff=colordiff -u
+fi
+alias E='open -a /Applications/Emacs.app'
+alias find='/usr/local/bin/gfind'
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
+
+alias androidemulator="pushd ~/Library/Android/Sdk/emulator && ./emulator -avd Nexus_5X_API_28_x86 & popd"
