@@ -113,6 +113,7 @@ export PATH=$PATH:/usr/local/texlive/2017basic/bin/x86_64-darwin
 
 # BREW
 export PATH=$PATH:$(brew --prefix)$(readlink /usr/local/bin/git|sed -e 's/\/bin\/git//'|sed -e 's/\.\.//')/share/git-core/contrib/diff-highlight
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 
 function peco-select-history() {
     local tac
