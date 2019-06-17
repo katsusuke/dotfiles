@@ -1,39 +1,41 @@
 [user]
-    email = katsusuke@gmail.com
-    name = Katsusuke Shimizu
+	email = katsusuke@gmail.com
+	name = Katsusuke Shimizu
 [color]
-    ui = auto
+	ui = auto
 [core]
-    editor = emacs
-    quotepath = false
-    excludesfile = ~/.gitignore
-    precomposeunicode = true
-    autocrlf = false
+	editor = emacs
+	quotepath = false
+	excludesfile = ~/.gitignore
+	precomposeunicode = true
+	autocrlf = false
 [rebase]
-    autostash = true
+	autostash = true
 [push]
-    default = simple
+	default = simple
 [alias]
-    log-graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M:%S'
-    gsub = !git-gsub.rb
-    s = status
-    d = diff
+	log-graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M:%S'
+	gsub = !git-gsub.rb
+        rename-migration = !rename_migration.rb
+	s = status
+	d = diff
+	c = commit
 [filter "media"]
-    clean = git-media-clean %f
-    smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 [pager]
-    log = diff-highlight|less -c
-    show = diff-highlight|less -c
-    diff = diff-highlight|less -c
+	log = diff-highlight|less -c
+	show = diff-highlight|less -c
+	diff = diff-highlight|less -c
 [ghq]
-    root = ~/git
+	root = ~/git
 [secrets]
 [init]
-    templatedir = ~/.git-templates/git-secrets
+	templatedir = ~/.git-templates/git-secrets
 
 [filter "lfs"]
-    required = true
-    clean = git-lfs clean -- %f
+	required = true
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [diff]
