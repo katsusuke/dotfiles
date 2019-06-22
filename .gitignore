@@ -2,3 +2,7 @@
 /.config/gtk-2.0/gtkfilechooser.ini
 /.config/htop/htoprc
 /.config/wireshark/preferences
+# for visual studio
+/.config/NuGet
+/.config/stetic
+/.config/xbuild
