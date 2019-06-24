@@ -77,7 +77,7 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
 export BREWOPT=/usr/local/opt
 # svn
 export SVN_EDITOR=emacs
