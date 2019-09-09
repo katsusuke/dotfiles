@@ -17,7 +17,3 @@ prompt_order = [
     "character"
 ]
 
-
-[character]      # The name of the module we are confguring is "character"
-symbol = "➜"
-
