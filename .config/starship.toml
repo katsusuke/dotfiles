@@ -3,7 +3,7 @@ prompt_order = [
     "directory",
     "git_branch",
     "git_state",
-    "git_status",
+#    "git_status", # line_break がない状態でこれを有効化するとバグる
     "package",
     "nodejs",
     "ruby",
@@ -13,7 +13,5 @@ prompt_order = [
     "nix_shell",
     "cmd_duration",
     "jobs",
-    "battery",
     "character"
 ]
-
