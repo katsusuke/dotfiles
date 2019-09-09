@@ -1,7 +1,7 @@
 autoload -U zmv
 
 autoload -U compinit
-compinit -u
+compinit
 
 # ファイル名
 export HISTFILE=${HOME}/.zsh_history
