@@ -50,6 +50,8 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[red]%}x%{$reset_color%}"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git docker zsh-wakatime)
 
+autoload -U zmv
+
 source $ZSH/oh-my-zsh.sh
 
 # ヒストリに保存するコマンド
@@ -95,6 +97,7 @@ fi
 # rbenv
 eval "$(rbenv init -)"
 # nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 export PATH="node_modules/.bin:$PATH"
 
