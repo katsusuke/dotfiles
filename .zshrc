@@ -1,9 +1,10 @@
 autoload -U zmv
 
-fpath=(/usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit -u
 
+# ファイル名
+export HISTFILE=${HOME}/.zsh_history
 # ヒストリに保存するコマンド
 export HISTSIZE=100000
 # 履歴ファイルに保存される履歴の件数
