@@ -2,14 +2,17 @@ autoload -U zmv
 
 autoload -U compinit
 compinit
+autoload colors
+colors
 
 # LS_COLORSを設定しておく
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # ファイル補完候補に色を付ける
+zstyle ':completion:*:default' menu select=2 # 補完侯補をメニューから選択する。select=2: 補完候補を一覧から選択する。補完候補が2つ以上なければすぐに補完する。
 
-# ファイル補完候補に色を付ける
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+setopt auto_pushd # cd したら pushd
 
-
+# history
 # ファイル名
 export HISTFILE=${HOME}/.zsh_history
 # ヒストリに保存するコマンド
@@ -20,6 +23,9 @@ export SAVEHIST=10000000
 setopt hist_ignore_dups
 # 以下のコマンドは記録しない(?や* も使える)
 export HISTIGNORE=pwd:ls:la:ll:lla:exit
+setopt share_history  # シェルのプロセスごとに履歴を共有
+setopt append_history # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
+
 # C-s での画面停止を無効
 stty stop undef
 
