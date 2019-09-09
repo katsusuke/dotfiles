@@ -1,3 +1,5 @@
+#zmodload zsh/zprof && zprof
+
 autoload -U zmv
 
 autoload -U compinit
@@ -31,6 +33,12 @@ export EDITOR=E
 
 # User configuration
 export PATH=$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+
+# symlink diff-highlight
+#if [ ! -e $HOME/bin/diff-highlight ]; then
+#    ln -s /usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
+#fi
+
 export BREWOPT=/usr/local/opt
 # svn
 export SVN_EDITOR=emacs
@@ -66,7 +74,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:/usr/local/texlive/2017basic/bin/x86_64-darwin
 
 # BREW
-export PATH=$PATH:$(brew --prefix)$(readlink /usr/local/bin/git|sed -e 's/\/bin\/git//'|sed -e 's/\.\.//')/share/git-core/contrib/diff-highlight
+export BREW_PREFIX=/usr/local
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 
 function peco-select-history() {
@@ -166,3 +174,7 @@ zle -N peco-kill
 bindkey '^gk' peco-kill
 
 eval "$(starship init zsh)"
+
+# if (which zprof > /dev/null 2>&1) ;then
+#   zprof
+# fi
