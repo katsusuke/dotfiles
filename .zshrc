@@ -136,15 +136,15 @@ function peco-select-gitadd() {
 zle -N peco-select-gitadd
 bindkey "^ga" peco-select-gitadd
 
-function peco-checkout-branch() {
-    local BRANCH="$(git --no-pager branch -a|ruby -e 'bs=readlines.map(&:strip);lb=bs.select{|b|!(/^remotes\/origin/ =~ b)};rb=bs.select{|b|/^remotes\/origin/ =~ b}.select{|b|!b.include?("->") && !lb.include?(b.gsub("remotes/origin/",""))};puts lb.select{|b|!(/^\*/ =~ b)} + rb'|peco --prompt 'git checkout')"
+function peco-switch-branch() {
+    local BRANCH="$(git --no-pager branch -a|ruby -e 'bs=readlines.map(&:strip);lb=bs.select{|b|!(/^remotes\/origin/ =~ b)};rb=bs.select{|b|/^remotes\/origin/ =~ b}.select{|b|!b.include?("->") && !lb.include?(b.gsub("remotes/origin/",""))};puts lb.select{|b|!(/^\*/ =~ b)} + rb'|peco --prompt 'git switch')"
     if [ -n "$BRANCH" ]; then
-	BUFFER="git checkout '$(echo $BRANCH | sed 's/remotes\/origin\///g')'"
+	BUFFER="git switch '$(echo $BRANCH | sed 's/remotes\/origin\///g')'"
     fi
     zle clear-screen
 }
-zle -N peco-checkout-branch
-bindkey '^gb' peco-checkout-branch
+zle -N peco-switch-branch
+bindkey '^gb' peco-switch-branch
 
 function peco-cd-ghq() {
     local cdto="$(ghq list -p | peco --prompt 'cd ')"
