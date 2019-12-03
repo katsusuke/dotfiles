@@ -20,6 +20,7 @@
 	s = status
 	d = diff
 	c = commit
+        push-f = push --force-with-lease
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
