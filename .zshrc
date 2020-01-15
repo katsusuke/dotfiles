@@ -1,5 +1,6 @@
 autoload -U zmv
 
+fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
 autoload colors
@@ -25,6 +26,7 @@ setopt hist_ignore_dups
 export HISTIGNORE=pwd:ls:la:ll:lla:exit
 setopt share_history  # シェルのプロセスごとに履歴を共有
 setopt append_history # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
+
 
 # C-s での画面停止を無効
 stty stop undef
