@@ -67,6 +67,7 @@ if [[ -d $HOME/.pyenv ]];then
     eval "$(pyenv init -)"
 fi
 # rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
