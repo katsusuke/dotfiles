@@ -140,7 +140,7 @@ zle -N peco-select-gitadd
 bindkey "^ga" peco-select-gitadd
 
 function peco-switch-branch() {
-    local BRANCH="$(git --no-pager branch -a|ruby -e 'bs=readlines.map(&:strip);lb=bs.select{|b|!(/^remotes\/origin/ =~ b)};rb=bs.select{|b|/^remotes\/origin/ =~ b}.select{|b|!b.include?("->") && !lb.include?(b.gsub("remotes/origin/",""))};puts lb.select{|b|!(/^\*/ =~ b)} + rb'|peco --prompt 'git switch')"
+    local BRANCH="$(git --no-pager branch -a|ruby -e 'bs=readlines.map(&:strip);lb=bs.select{|b|!(/^remotes\/origin/ =~ b)};rb=bs.select{|b|/^remotes\/origin/ =~ b}.select{|b|!b.include?("->") && !lb.include?(b.gsub("remotes/origin/",""))};puts lb.select{|b|!(/^\*/ =~ b)} + rb'|peco --prompt 'git switch' --selection-prefix '👉')"
     if [ -n "$BRANCH" ]; then
 	BUFFER="git switch '$(echo $BRANCH | sed 's/remotes\/origin\///g')'"
     fi
@@ -150,7 +150,7 @@ zle -N peco-switch-branch
 bindkey '^gb' peco-switch-branch
 
 function peco-cd-ghq() {
-    local cdto="$(ghq list -p | peco --prompt 'cd ')"
+    local cdto="$(ghq list -p | peco --prompt 'cd ' --selection-prefix '👉')"
     echo "LBUFFER:$LBUFFER"
     if [ -n "$cdto" ]; then
 	BUFFER="cd $cdto"
@@ -159,23 +159,6 @@ function peco-cd-ghq() {
 }
 zle -N peco-cd-ghq
 bindkey '^gl' peco-cd-ghq
-
-function rvm-gemset-cd() {
-    local gemset=$(rvm list gemsets|rvm_gemset_list|peco --prompt 'gemset>'|awk '{print $1}')
-    if [ "$LBUFFER" -eq "" ]; then
-	local gem=$(echo "$(ls --color=none ~/.rvm/gems/$gemset/gems) $(ls --color=none ~/.rvm/gems/$gemset/bundler/gems)"|peco)
-	if [ "$LBUFFER" -eq "" ]; then
-	    if [ -d "$HOME/.rvm/gems/$gemset/gems/$gem" ]; then
-		BUFFER="cd ~/.rvm/gems/$gemset/gems/$gem"
-	    else
-		BUFFER="cd ~/.rvm/gems/$gemset/bundler/gems/$gem"
-	    fi
-	fi
-    fi
-    zle clear-screen
-}
-zle -N rvm-gemset-cd
-bindkey '^gs' rvm-gemset-cd
 
 function peco-kill() {
     local process="$(ps aux |tail -n +2| peco --prompt 'kill '|awk '{print $2}')"
