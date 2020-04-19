@@ -2,7 +2,6 @@ alias ls='gls --color'
 alias ll='gls -l --color'
 alias la='gls -a --color'
 alias lla='gls -la --color'
-alias emacs='emacs -nw'
 alias xargs='gxargs'
 alias r='bundle exec bin/rails'
 alias rrg='find . -path ./.git -prune -type f -o -path ./log -prune -type f -o -path ./tmp -prune -type f -o -path ./db -prune -type f -o -type f -print0|xargs -0 grep'
@@ -11,7 +10,7 @@ alias doc='docker'
 if [[ -x `which colordiff` ]]; then
    alias diff=colordiff -u
 fi
-alias E='open -a /Applications/Emacs.app'
+alias E='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n --alternate-editor="open -a Emacs"'
 alias A='open -n /Applications/Alacritty.app'
 alias find='/usr/local/bin/gfind'
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
