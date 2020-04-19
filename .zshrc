@@ -47,11 +47,6 @@ export EDITOR=E
 # User configuration
 export PATH=$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
 
-# symlink diff-highlight
-#if [ ! -e $HOME/bin/diff-highlight ]; then
-#    ln -s /usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
-#fi
-
 export BREWOPT=/usr/local/opt
 # svn
 export SVN_EDITOR=emacs
@@ -90,6 +85,16 @@ export PATH=$PATH:/usr/local/texlive/2017basic/bin/x86_64-darwin
 # BREW
 export BREW_PREFIX=/usr/local
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+
+# cask
+export PATH="$HOME/.cask/bin:$PATH"
+
+function update-diff-highlight() {
+    # symlink diff-highlight
+    if [ ! -e $HOME/bin/diff-highlight ]; then
+        ln -s /usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
+    fi
+}
 
 function peco-select-history() {
     local tac
