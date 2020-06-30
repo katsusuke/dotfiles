@@ -30,3 +30,6 @@ config/initializers/kat_custom.rb
 .projectile
 
 *.nonecommit
+
+# for lsp
+/.log
