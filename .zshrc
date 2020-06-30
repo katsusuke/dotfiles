@@ -45,7 +45,10 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+
+# ptosh mongodb
+export PATH=$PATH:/usr/local/Cellar/mongodb-community@3.6/3.6.18/bin
 
 export BREWOPT=/usr/local/opt
 # svn
@@ -89,11 +92,15 @@ export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 # cask
 export PATH="$HOME/.cask/bin:$PATH"
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 function update-diff-highlight() {
+    src=/usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight
+    dist=$HOME/bin/diff-highlight
     # symlink diff-highlight
-    if [ ! -e $HOME/bin/diff-highlight ]; then
-        ln -s /usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight $HOME/bin/diff-highlight
-    fi
+    rm -f $dist
+    ln -s ${src:a} $dist
 }
 
 function peco-select-history() {
