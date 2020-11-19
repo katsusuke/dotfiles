@@ -35,10 +35,6 @@ stty stop undef
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
-# keys
-if [ -f ~/.private.zsh ]; then
-    source ~/.private.zsh
-fi
 
 # envs
 export PAGER='less -X'
@@ -59,11 +55,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 # Azure size
 export AZURE_SIZE=Standard_A0
-if [[ -d $HOME/.pyenv ]];then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -71,10 +63,15 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 export PATH="node_modules/.bin:$PATH"
+# pipenv
+eval "$(pipenv --completion)"
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 export STUDIO_JDK=${JAVA_HOME%/*/*}
+
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
