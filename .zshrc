@@ -25,7 +25,7 @@ setopt hist_ignore_dups
 # 以下のコマンドは記録しない(?や* も使える)
 export HISTIGNORE=pwd:ls:la:ll:lla:exit
 setopt share_history  # シェルのプロセスごとに履歴を共有
-setopt append_history # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
+setopt inc_append_history # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 
 
 # C-s での画面停止を無効
@@ -101,17 +101,9 @@ function update-diff-highlight() {
 }
 
 function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
+    fc -R
+    BUFFER=$(fc -lrn 1 | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
