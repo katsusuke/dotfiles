@@ -7,3 +7,6 @@
 /.config/stetic
 /.config/xbuild
 /.config/gatsby
+/.config/yarn
+/.config/Microsoft\\VisualStudio\ Services/8.0/cache
+/.config/.mono/
