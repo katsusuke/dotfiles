@@ -1,12 +1,37 @@
-/.config/configstore
-/.config/gtk-2.0/gtkfilechooser.ini
-/.config/htop/htoprc
-/.config/wireshark/preferences
-# for visual studio
-/.config/NuGet
-/.config/stetic
-/.config/xbuild
-/.config/gatsby
-/.config/yarn
-/.config/Microsoft\\VisualStudio\ Services/8.0/cache
-/.config/.mono/
+.DS_Store
+Thumb.db
+
+#.ruby-version
+.env.development
+
+# for ruby
+/.bundle
+/vendor/bin
+/vendor/bundle
+
+flycheck_.*
+.sass-cache
+
+/mnt
+
+GTAGS
+GPATH
+GRTAGS
+
+
+~$*.xlsx
+
+.vscode
+
+config/initializers/array_to_md.rb
+config/initializers/kat_custom.rb
+.agignore
+
+.projectile
+
+*.nonecommit
+
+# for lsp
+/.log
+flycheck_*.ts
+flycheck_*.js
