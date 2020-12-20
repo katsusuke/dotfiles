@@ -6,7 +6,7 @@
 [core]
 	editor = /Applications/Emacs.app/Contents/MacOS/Emacs
 	quotepath = false
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/gitignore
 	precomposeunicode = true
 	autocrlf = false
 [rebase]
@@ -32,7 +32,7 @@
 	root = ~/git
 [secrets]
 [init]
-	templatedir = ~/.git-templates/git-secrets
+	templatedir = ~/.config/git/git-templates/git-secrets
 
 [filter "lfs"]
 	required = true

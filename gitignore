@@ -33,3 +33,5 @@ config/initializers/kat_custom.rb
 
 # for lsp
 /.log
+flycheck_*.ts
+flycheck_*.js
