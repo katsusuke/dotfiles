@@ -41,7 +41,7 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/local/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
 
 # ptosh mongodb
 export PATH=$PATH:/usr/local/Cellar/mongodb-community@3.6/3.6.18/bin
