@@ -35,3 +35,6 @@ config/initializers/kat_custom.rb
 /.log
 flycheck_*.ts
 flycheck_*.js
+
+# eslint
+.eslintcache
