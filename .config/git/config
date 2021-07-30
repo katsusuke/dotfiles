@@ -20,6 +20,8 @@
 	s = status
 	d = diff
 	c = commit
+        a = add
+        p = push
         push-f = push --force-with-lease
 [filter "media"]
 	clean = git-media-clean %f
@@ -30,10 +32,6 @@
 	diff = diff-highlight|less -c
 [ghq]
 	root = ~/git
-[secrets]
-[init]
-	templatedir = ~/.config/git/git-templates/git-secrets
-
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
