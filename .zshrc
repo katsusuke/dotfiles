@@ -57,7 +57,6 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 export AZURE_SIZE=Standard_A0
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
@@ -65,6 +64,8 @@ eval "$(nodenv init -)"
 export PATH="node_modules/.bin:$PATH"
 # pipenv
 eval "$(pipenv --completion)"
+# direnv
+eval "$(direnv hook zsh)"
 
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
