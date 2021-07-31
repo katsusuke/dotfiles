@@ -38,3 +38,5 @@ flycheck_*.js
 
 # eslint
 .eslintcache
+# direnv
+.envrc
