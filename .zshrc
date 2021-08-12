@@ -56,12 +56,8 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 # Azure size
 export AZURE_SIZE=Standard_A0
 
-# rbenv
-eval "$(rbenv init -)"
-# nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-export PATH="node_modules/.bin:$PATH"
+. $HOME/.asdf/asdf.sh
+
 # pipenv
 eval "$(pipenv --completion)"
 # direnv
