@@ -63,12 +63,7 @@ eval "$(pipenv --completion)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# Java
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 export STUDIO_JDK=${JAVA_HOME%/*/*}
-
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
