@@ -10,3 +10,5 @@
 /.config/yarn
 /.config/Microsoft\\VisualStudio\ Services/8.0/cache
 /.config/.mono/
+/.config/fish/fishd.*
+/.config/fish/fish_history

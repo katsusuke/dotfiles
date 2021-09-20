@@ -1,0 +1,44 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_init_1_50_0:\x1d
+SETUVAR __fish_init_2_39_8:\x1d
+SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_initialized:3100
+SETUVAR budspencer_colors:000000\x1e083743\x1e445659\x1efdf6e3\x1eb58900\x1ecb4b16\x1edc121f\x1eaf005f\x1e6c71c4\x1e268bd2\x1e2aa198\x1e859900
+SETUVAR budspencer_cursors:\x5c033\x5d12\x3b\x23268bd2\x5c007\x1e\x5c033\x5d12\x3b\x23b58900\x5c007\x1e\x5c033\x5d12\x3b\x23af005f\x5c007\x1e\x5c033\x5d12\x3b\x236c71c4\x5c007
+SETUVAR budspencer_day:000000\x1e333333\x1e666666\x1effffff\x1effff00\x1eff6600\x1eff0000\x1eff0033\x1e3300ff\x1e00aaff\x1e00ffff\x1e00ff00
+SETUVAR budspencer_night:000000\x1e083743\x1e445659\x1efdf6e3\x1eb58900\x1ecb4b16\x1edc121f\x1eaf005f\x1e6c71c4\x1e268bd2\x1e2aa198\x1e859900
+SETUVAR budspencer_nocmdhist:c\x1ed\x1ell\x1els\x1em\x1es
+SETUVAR budspencer_pwdstyle:short\x1elong\x1enone
+SETUVAR budspencer_sessions_active:\x1d
+SETUVAR budspencer_sessions_active_pid:\x1d
+SETUVAR fish_color_autosuggestion:555\x1eyellow
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:005fd7\x1epurple
+SETUVAR fish_color_comment:red
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:brmagenta
+SETUVAR fish_color_error:red\x1e\x2d\x2dbold
+SETUVAR fish_color_escape:cyan
+SETUVAR fish_color_history_current:cyan
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:cyan
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:cyan
+SETUVAR fish_color_param:00afff\x1ecyan
+SETUVAR fish_color_quote:brown
+SETUVAR fish_color_redirection:normal
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3dpurple
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3dpurple
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x1b\x5b32mhelp\x1b\x5b30m\x1b\x28B\x1b\x5bm\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:555\x1eyellow
+SETUVAR fish_pager_color_prefix:cyan
+SETUVAR fish_pager_color_progress:cyan
+SETUVAR --export fish_user_paths:/home/katsusuke/\x2ecask/bin\x1e/home/katsusuke/\x2enodenv/bin\x1e/home/katsusuke/\x2elocal/bin\x1e/home/katsusuke/\x2ego/bin\x1e/usr/local/bin\x1e/usr/lib/go\x2d1\x2e9/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/usr/bin\x1e/sbin\x1e/bin\x1e/usr/games\x1e/usr/local/games\x1e/home/katsusuke/\x2ecargo/bin
