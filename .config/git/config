@@ -2,7 +2,7 @@
 	email = katsusuke@gmail.com
 	name = Katsusuke Shimizu
 [color]
-	ui = auto
+	ui = true
 [core]
 	editor = /Applications/Emacs.app/Contents/MacOS/Emacs
 	quotepath = false
@@ -26,10 +26,6 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[pager]
-	log = diff-highlight|less -c
-	show = diff-highlight|less -c
-	diff = diff-highlight|less -c
 [ghq]
 	root = ~/git
 [filter "lfs"]
