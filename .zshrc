@@ -41,7 +41,7 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/local/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
 
 # ptosh mongodb
 export PATH=$PATH:/usr/local/Cellar/mongodb-community@3.6/3.6.18/bin
@@ -57,6 +57,7 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 export AZURE_SIZE=Standard_A0
 
 . $HOME/.asdf/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 # pipenv
 eval "$(pipenv --completion)"
@@ -68,18 +69,12 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-# rust
-export PATH=$HOME/.cargo/bin:$PATH
-
 # MacTex
 export PATH=$PATH:/usr/local/texlive/2017basic/bin/x86_64-darwin
 
 # BREW
 export BREW_PREFIX=/usr/local
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-
-# cask
-export PATH="$HOME/.cask/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
