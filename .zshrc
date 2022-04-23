@@ -1,8 +1,6 @@
 autoload -U zmv
 
 fpath=(~/.zsh/completion $fpath)
-autoload -U compinit
-compinit
 autoload colors
 colors
 
@@ -57,10 +55,16 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 export AZURE_SIZE=Standard_A0
 
 . $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
 . ~/.asdf/plugins/java/set-java-home.zsh
 
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+
+#. ~/.asdf/plugins/java/set-java-home.zsh
+
 # pipenv
-eval "$(pipenv --completion)"
+#eval "$(pipenv --completion)"
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -78,6 +82,9 @@ export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# dotnet
+export PATH="$PATH:~/.dotnet/tools"
 
 function update-diff-highlight() {
     src=/usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight
@@ -157,5 +164,7 @@ function peco-kill() {
 }
 zle -N peco-kill
 bindkey '^gk' peco-kill
+
+autoload -Uz compinit && compinit
 
 eval "$(starship init zsh)"
