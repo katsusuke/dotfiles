@@ -13,7 +13,7 @@ if [[ -x `which colordiff` ]]; then
 fi
 alias E='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n --alternate-editor="open -a Emacs"'
 alias A='open -n /Applications/Alacritty.app'
-alias find='/usr/local/bin/gfind'
+alias find='gfind'
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
