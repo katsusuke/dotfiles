@@ -35,33 +35,30 @@ if [ -f ~/.aliases ]; then
 fi
 
 # envs
+if [[ -d /opt/homebrew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:$PATH
 
-# ptosh mongodb
-export PATH=$PATH:/usr/local/Cellar/mongodb-community@3.6/3.6.18/bin
-
-export BREWOPT=/usr/local/opt
 # svn
 export SVN_EDITOR=emacs
 export MAGICK_HOME="/opt/local/bin"
 # golang
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH/bin
 # Azure size
 export AZURE_SIZE=Standard_A0
 
 . $HOME/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 . ~/.asdf/plugins/java/set-java-home.zsh
-
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
-#. ~/.asdf/plugins/java/set-java-home.zsh
 
 # pipenv
 #eval "$(pipenv --completion)"
@@ -73,26 +70,8 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-# MacTex
-export PATH=$PATH:/usr/local/texlive/2017basic/bin/x86_64-darwin
-
-# BREW
-export BREW_PREFIX=/usr/local
-export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# dotnet
-export PATH="$PATH:~/.dotnet/tools"
-
-function update-diff-highlight() {
-    src=/usr/local/bin/$(dirname $(readlink /usr/local/bin/git))/../share/git-core/contrib/diff-highlight/diff-highlight
-    dist=$HOME/bin/diff-highlight
-    # symlink diff-highlight
-    rm -f $dist
-    ln -s ${src:a} $dist
-}
 
 function peco-select-history() {
     fc -R
