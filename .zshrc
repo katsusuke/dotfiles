@@ -127,7 +127,7 @@ function peco-cd-ghq() {
     local cdto="$(ghq list -p | peco --prompt 'cd ' --selection-prefix '👉')"
     echo "LBUFFER:$LBUFFER"
     if [ -n "$cdto" ]; then
-	BUFFER="cd $cdto"
+	BUFFER="cd '$cdto'"
     fi
     zle clear-screen
 }
@@ -145,5 +145,14 @@ zle -N peco-kill
 bindkey '^gk' peco-kill
 
 autoload -Uz compinit && compinit
+
+_dotnet_zsh_complete()
+{
+  local completions=("$(dotnet complete "$words")")
+
+  reply=( "${(ps:\n:)completions}" )
+}
+
+compctl -K _dotnet_zsh_complete dotnet
 
 eval "$(starship init zsh)"
