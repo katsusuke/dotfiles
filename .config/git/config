@@ -4,6 +4,7 @@
 [color]
 	ui = true
 [core]
+	pager = delta
 	editor = /Applications/Emacs.app/Contents/MacOS/Emacs
 	quotepath = false
 	excludesfile = ~/.config/git/gitignore
@@ -13,16 +14,17 @@
 	autostash = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	log-graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M:%S'
 	gsub = !git-gsub-ruby
-        rename-migration = !rename_migration.rb
+	rename-migration = !rename_migration.rb
 	s = status
 	d = diff
 	c = commit
-        a = add
-        p = push
-        push-f = push --force-with-lease
+	a = add
+	p = push
+	push-f = push --force-with-lease
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -37,3 +39,20 @@
 	compactionHeuristic = true
 [pull]
 	ff = only
+
+# git-delta
+[interactive]
+	diffFilter = delta --color-only
+[add.interactive]
+	useBuiltin = false # required for git 2.37.0
+
+[delta]
+	plus-style = red bold "#101010"
+	navigate = true    # use n and N to move between diff
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
