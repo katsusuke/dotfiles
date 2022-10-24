@@ -18,3 +18,4 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
 alias androidemulator="pushd ~/Library/Android/Sdk/emulator && ./emulator -avd Nexus_5X_API_28_x86 & popd"
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
