@@ -12,3 +12,4 @@
 /.config/.mono/
 /.config/fish/fishd.*
 /.config/fish/fish_history
+/.config/flutter
