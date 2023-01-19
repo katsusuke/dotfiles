@@ -49,7 +49,6 @@ export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/ka
 
 # svn
 export SVN_EDITOR=emacs
-export MAGICK_HOME="/opt/local/bin"
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -72,6 +71,10 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# option + 矢印でワード移動
+bindkey "\e[1;3D" backward-word
+bindkey "\e[1;3C" forward-word
 
 function peco-select-history() {
     fc -R
