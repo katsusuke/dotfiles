@@ -21,6 +21,7 @@
 	rename-migration = !rename_migration.rb
 	s = status
 	d = diff
+        dd = !git --no-pager diff
 	c = commit
 	a = add
 	p = push
@@ -50,6 +51,7 @@
         path = ~/.config/git/themes.gitconfig
 [delta]
         features = tangara-chilensis
+        syntax-theme = 1337
 	navigate = true    # use n and N to move between diff
 	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
         side-by-side = true
