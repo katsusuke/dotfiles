@@ -57,3 +57,5 @@
         side-by-side = true
 [merge]
 	conflictstyle = diff3
+[fetch]
+	prune = true
