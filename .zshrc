@@ -1,6 +1,11 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 autoload -U zmv
 
-fpath=(~/.zsh/completion $fpath)
+if [[ -d ~/.zsh/completion ]]; then
+    fpath=(~/.zsh/completion $fpath)
+fi
+
 autoload colors
 colors
 
@@ -34,6 +39,10 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
+if [ -f ~/.private.zsh ]; then
+    source ~/.private.zsh
+fi
+
 # envs
 if [[ -d /opt/homebrew ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -41,11 +50,13 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:$PATH
+export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/opt/homebrew/opt/postgresql@15/bin:$PATH
 
 # svn
 export SVN_EDITOR=emacs
@@ -100,7 +111,7 @@ function peco-select-path() {
 }
 
 zle -N peco-select-path
-bindkey '^f' peco-select-path # Ctrl+f で起動
+bindkey '^gf' peco-select-path # Ctrl+f で起動
 
 function peco-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
@@ -159,3 +170,6 @@ _dotnet_zsh_complete()
 compctl -K _dotnet_zsh_complete dotnet
 
 eval "$(starship init zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
