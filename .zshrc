@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 autoload -U zmv
 
 if [[ -d ~/.zsh/completion ]]; then
@@ -66,9 +64,7 @@ export PATH=$PATH:$GOPATH/bin
 # Azure size
 export AZURE_SIZE=Standard_A0
 
-. $HOME/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-. ~/.asdf/plugins/java/set-java-home.zsh
+eval "$(mise activate zsh)"
 
 # pipenv
 #eval "$(pipenv --completion)"
@@ -87,32 +83,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 bindkey "\e[1;3D" backward-word
 bindkey "\e[1;3C" forward-word
 
-function peco-select-history() {
-    fc -R
-    BUFFER=$(fc -lrn 1 | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
-function peco-select-path() {
-  local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
-  if [ "$LBUFFER" -eq "" ]; then
-    if [ -d "$filepath" ]; then
-      BUFFER="cd $filepath"
-    elif [ -f "$filepath" ]; then
-      BUFFER="$EDITOR $filepath"
-    fi
-  else
-    BUFFER="$LBUFFER$filepath"
-  fi
-  CURSOR=$#BUFFER
-  zle clear-screen
-}
-
-zle -N peco-select-path
-bindkey '^gf' peco-select-path # Ctrl+f で起動
-
 function peco-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
                                   peco --query "$LBUFFER" | \
@@ -130,33 +100,24 @@ bindkey "^ga" peco-select-gitadd
 function peco-switch-branch() {
     local BRANCH="$(git --no-pager branch -a|ruby -e 'bs=readlines.map(&:strip);lb=bs.select{|b|!(/^remotes\/origin/ =~ b)};rb=bs.select{|b|/^remotes\/origin/ =~ b}.select{|b|!b.include?("->") && !lb.include?(b.gsub("remotes/origin/",""))};puts lb.select{|b|!(/^\*/ =~ b)} + rb'|peco --prompt 'git switch' --selection-prefix '👉')"
     if [ -n "$BRANCH" ]; then
-	BUFFER="git switch '$(echo $BRANCH | sed 's/remotes\/origin\///g')'"
+        BUFFER="git switch '$(echo $BRANCH | sed 's/remotes\/origin\///g')'"
     fi
     zle clear-screen
 }
 zle -N peco-switch-branch
 bindkey '^gb' peco-switch-branch
 
-function peco-cd-ghq() {
-    local cdto="$(ghq list -p | peco --prompt 'cd ' --selection-prefix '👉')"
-    echo "LBUFFER:$LBUFFER"
-    if [ -n "$cdto" ]; then
-	BUFFER="cd '$cdto'"
-    fi
-    zle clear-screen
+function fzf-select-path() {
+  local src=$(ghq list | fzf --preview "ls -laTp $(ghq root)/{} | tail -n+4 | awk '{print \$9\"/\"\$6\"/\"\$7 \" \" \$10}'")
+  if [ -n "$src" ]; then
+    BUFFER="cd $(ghq root)/$src"
+    zle accept-line
+  fi
+  zle -R -c
 }
-zle -N peco-cd-ghq
-bindkey '^gl' peco-cd-ghq
 
-function peco-kill() {
-    local process="$(ps aux |tail -n +2| peco --prompt 'kill '|awk '{print $2}')"
-    if [ -n "$process" ]; then
-	BUFFER="kill $process"
-    fi
-    zle clear-screen
-}
-zle -N peco-kill
-bindkey '^gk' peco-kill
+zle -N fzf-select-path
+bindkey '^gl' fzf-select-path
 
 autoload -Uz compinit && compinit
 
@@ -171,5 +132,6 @@ compctl -K _dotnet_zsh_complete dotnet
 
 eval "$(starship init zsh)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+export FZF_DEFAULT_OPTS='--layout=reverse --border --height 100%'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
