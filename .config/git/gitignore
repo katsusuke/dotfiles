@@ -42,3 +42,5 @@ flycheck_*.js
 .envrc
 
 omnisharp.json
+
+mermaid-filter.err
