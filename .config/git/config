@@ -25,7 +25,9 @@
 	c = commit
 	a = add
 	p = push
+        pp = pull -p
 	push-f = push --force-with-lease
+        rs = restore
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
