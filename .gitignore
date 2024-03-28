@@ -13,3 +13,8 @@
 /.config/fish/fishd.*
 /.config/fish/fish_history
 /.config/flutter
+/.config/flameshot
+/.config/gcloud
+/.config/github-copilot
+/.config/simple-update-notifier
+/.config/sonic-pi.net
