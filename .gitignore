@@ -18,3 +18,16 @@
 /.config/github-copilot
 /.config/simple-update-notifier
 /.config/sonic-pi.net
+/.config/go/temporary
+/.config/chromium/
+/.config/dconf/
+/.config/go/
+/.config/kanshi/
+/.config/labwc/
+/.config/lxterminal/
+/.config/pulse/
+/.config/user-dirs.dirs
+/.config/user-dirs.locale
+/.config/wf-panel-pi.ini
+/.config/xsettingsd/
+
