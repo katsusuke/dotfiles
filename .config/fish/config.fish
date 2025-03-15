@@ -1,23 +1,7 @@
-export GOPATH=$HOME/.go
 alias g=git
 
-source ~/.asdf/asdf.fish
+set -x PATH $HOME/.fzf/bin $HOME/go/bin /usr/local/go/bin $PATH
 
-function peco_select_history
-  if test (count $argv) = 0
-    set peco_flags
-  else
-    set peco_flags --query "$argv"
-  end
-
-  history|peco $peco_flags|read foo
-
-  if [ $foo ]
-    commandline $foo
-  else
-    commandline ''
-  end
-end
 
 function peco_ghq_list
   if test (count $argv) = 0
@@ -26,7 +10,7 @@ function peco_ghq_list
     set peco_flags --query "$argv"
   end
 
-  ghq list|peco $peco_flags|read foo
+  ghq list|fzf $peco_flags|read foo
 
   if [ $foo ]
     set root (ghq root)
@@ -37,6 +21,6 @@ function peco_ghq_list
 end
 
 function fish_user_key_bindings
-    bind \cr peco_select_history
     bind \cl peco_ghq_list
 end
+

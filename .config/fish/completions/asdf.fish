@@ -1,1 +1,0 @@
-/home/katsusuke/.asdf/completions/asdf.fish
