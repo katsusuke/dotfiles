@@ -1,7 +1,8 @@
-alias ls='gls --color'
-alias ll='gls -l --color'
-alias la='gls -a --color'
-alias lla='gls -la --color'
+alias ls='lsd'
+alias ll='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
 alias xargs='gxargs'
 alias r='bundle exec bin/rails'
 alias be='bundle exec'
@@ -11,7 +12,8 @@ alias doc='docker'
 if [[ -x `which colordiff` ]]; then
    alias diff=colordiff -u
 fi
-alias E='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n --alternate-editor="open -a Emacs"'
+alias E='emacsclient -n --alternate-editor="open -a Emacs"'
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias A='open -n /Applications/Alacritty.app'
 alias find='gfind'
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
@@ -19,3 +21,4 @@ alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 
 alias androidemulator="pushd ~/Library/Android/Sdk/emulator && ./emulator -avd Nexus_5X_API_28_x86 & popd"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias jq=jnv
