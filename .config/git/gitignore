@@ -1,7 +1,12 @@
+config/initializers/array_to_md.rb
+config/initializers/kat_custom.rb
+
+# for macOS
 .DS_Store
+
+# for Windows
 Thumb.db
 
-#.ruby-version
 .env.development
 
 # for ruby
@@ -9,38 +14,39 @@ Thumb.db
 /vendor/bin
 /vendor/bundle
 
-flycheck_.*
 .sass-cache
 
 /mnt
 
+# for ctags
 GTAGS
 GPATH
 GRTAGS
 
-
+# for Excel
 ~$*.xlsx
 
-.vscode
-
-config/initializers/array_to_md.rb
-config/initializers/kat_custom.rb
+# for AG
 .agignore
-
-.projectile
 
 *.nonecommit
 
-# for lsp
+# for emacs
+.projectile
 /.log
+flycheck_.*
 flycheck_*.ts
 flycheck_*.js
 
-# eslint
+# for eslint
 .eslintcache
-# direnv
+
+# for direnv
 .envrc
 
-omnisharp.json
-
+# for pandoc
 mermaid-filter.err
+
+# .NET
+mono_crash.*.json
+omnisharp.json
