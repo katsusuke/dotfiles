@@ -50,3 +50,6 @@ mermaid-filter.err
 # .NET
 mono_crash.*.json
 omnisharp.json
+
+# claude
+**/.claude/settings.local.json

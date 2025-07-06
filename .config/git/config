@@ -5,7 +5,7 @@
 	pager = delta
 	editor = emacs
 	quotepath = false
-	excludesfile = ~/.config/git/gitignore
+	excludesfile = ~/.config/git/ignore
 	precomposeunicode = true
 	autocrlf = false
         
@@ -30,6 +30,7 @@
 	gsub = !git-gsub-ruby
 	rename-migration = !rename_migration.rb
 	s = status
+        sw = switch
 	d = diff
         dd = !git --no-pager diff
 	c = commit
