@@ -1,0 +1,13 @@
+[settings]
+experimental = true
+#experimental = true
+
+[tools]
+java = "corretto-11.0.19.7.1"
+python = "3.13.0"
+ruby = "3.3.6"
+nodejs = "lts"
+task_disable_paths = ["/Users/katsusuke/mnt"]
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:deno" = "latest"
+"npm:@graphql-cli/init" = "latest"
