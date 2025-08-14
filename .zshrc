@@ -54,7 +54,7 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/git/github.com/katsusuke/private-tools:/opt/homebrew/opt/postgresql@15/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/.dotnet/tools:$HOME/git/github.com/katsusuke/private-tools:/opt/homebrew/opt/postgresql@15/bin:$PATH
 
 # svn
 export SVN_EDITOR=emacs
@@ -64,7 +64,7 @@ export PATH=$PATH:$GOPATH/bin
 # Azure size
 export AZURE_SIZE=Standard_A0
 
-eval "$(mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
 
 # pipenv
 #eval "$(pipenv --completion)"
@@ -136,3 +136,5 @@ eval "$(starship init zsh)"
 export FZF_DEFAULT_OPTS='--layout=reverse --border --height 100%'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. "$HOME/.local/bin/env"
