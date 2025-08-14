@@ -20,10 +20,3 @@ GRTAGS
 
 .vscode
 
-config/initializers/array_to_md.rb
-config/initializers/kat_custom.rb
-
-coverage
-tmp/cache/*
-log/development.log
-app/tmp
