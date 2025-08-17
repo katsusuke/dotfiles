@@ -26,8 +26,8 @@ GRTAGS
 # for Excel
 ~$*.xlsx
 
-# for AG
-.agignore
+# for ripgrep
+.rgignore
 
 *.nonecommit
 
@@ -53,3 +53,9 @@ omnisharp.json
 
 # claude
 **/.claude/settings.local.json
+
+# serena
+.serena
+
+# mise
+/mise.toml
