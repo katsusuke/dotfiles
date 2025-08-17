@@ -54,7 +54,10 @@ export PAGER='less -X'
 export EDITOR=E
 
 # User configuration
-export PATH=$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/.dotnet/tools:$HOME/git/github.com/katsusuke/private-tools:/opt/homebrew/opt/postgresql@15/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/bin:$HOME/.dotnet/tools:$HOME/git/github.com/katsusuke/private-tools:$PATH
+if [[ -d $HOME/git/github.com/OmniSharp/omnisharp-roslyn/bin/Release/OmniSharp.Stdio.Driver/net6.0 ]]; then
+  export PATH=$PATH:$HOME/git/github.com/OmniSharp/omnisharp-roslyn/bin/Release/OmniSharp.Stdio.Driver/net6.0
+fi
 
 # svn
 export SVN_EDITOR=emacs
