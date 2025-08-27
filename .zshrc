@@ -12,7 +12,12 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # ファイル補完候補に色を付ける
 zstyle ':completion:*:default' menu select=2 # 補完侯補をメニューから選択する。select=2: 補完候補を一覧から選択する。補完候補が2つ以上なければすぐに補完する。
 
+# option + 矢印でワード移動
+bindkey "\e[1;3D" backward-word
+bindkey "\e[1;3C" forward-word
+
 setopt auto_pushd # cd したら pushd
+stty stop undef # C-s での画面停止を無効
 
 # history
 # ファイル名
@@ -27,10 +32,6 @@ setopt hist_ignore_dups
 export HISTIGNORE=pwd:ls:la:ll:lla:exit
 setopt share_history  # シェルのプロセスごとに履歴を共有
 setopt inc_append_history # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
-
-
-# C-s での画面停止を無効
-stty stop undef
 
 # alias
 if [ -f ~/.aliases ]; then
@@ -64,6 +65,8 @@ export SVN_EDITOR=emacs
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+# claude
+export DISABLE_MICROCOMPACT=1
 # Azure size
 export AZURE_SIZE=Standard_A0
 
@@ -83,9 +86,6 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
 
-# option + 矢印でワード移動
-bindkey "\e[1;3D" backward-word
-bindkey "\e[1;3C" forward-word
 
 function peco-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
