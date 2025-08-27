@@ -1,6 +1,7 @@
 [settings]
 experimental = true
 task_disable_paths = ["/Users/katsusuke/mnt"]
+idiomatic_version_file_enable_tools = ["[node ruby python]"]
 
 [tools]
 java = "corretto-11.0.19.7.1"
