@@ -1,15 +1,16 @@
 [settings]
 experimental = true
 task_disable_paths = ["/Users/katsusuke/mnt"]
-idiomatic_version_file_enable_tools = ["[node ruby python]"]
+idiomatic_version_file_enable_tools = ["node", "ruby", "python"]
 
 [tools]
-java = "corretto-11.0.19.7.1"
+java = "corretto-17.0.6.10.1"
 python = "3.13.0"
-ruby = "3.3.6"
-"npm:@anthropic-ai/claude-code" = "latest"
+ruby = "latest"
 "npm:deno" = "latest"
 "npm:@graphql-cli/init" = "latest"
 "npm:eclint" = "latest"
 node = "24"
 "npm:@github/copilot-language-server" = "latest"
+erlang = "latest"
+elixir = "latest"
