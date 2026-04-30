@@ -8,38 +8,38 @@
 	excludesfile = ~/.config/git/ignore
 	precomposeunicode = true
 	autocrlf = false
-        
+	
 [column]
-        ui = auto
+	ui = auto
 [rebase]
 	autostash = true
 [init]
-        defaultBranch = main
+	defaultBranch = main
 [pull]
 	ff = only
 [push]
 	default = simple
 	autoSetupRemote = true
-        followTags = true
+	followTags = true
 [fetch]
 	prune = true
-        pruneTags = true
-        all = true
+	pruneTags = true
+	all = true
 [alias]
 	log-graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M:%S'
-        sweep = "!git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs -r git branch -D"
+	sweep = "!git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs -r git branch -D"
 	gsub = !git-gsub-ruby
 	rename-migration = !rename_migration.rb
 	s = status
-        sw = switch
+	sw = switch
 	d = diff
-        dd = !git --no-pager diff
+	dd = !git --no-pager diff
 	c = commit
 	a = add
 	p = push
-        pp = pull -p
+	pp = pull -p
 	push-f = push --force-with-lease
-        rs = restore
+	rs = restore
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -51,10 +51,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [diff]
-        algorithm = histogram
+	algorithm = histogram
 	colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
+	mnemonicPrefix = true
+	renames = true
 
 # git-delta
 [interactive]
@@ -62,12 +62,12 @@
 [add.interactive]
 	useBuiltin = false # required for git 2.37.0
 [include]
-        path = ~/.config/git/themes.gitconfig
+	path = ~/.config/git/themes.gitconfig
 [delta]
-        features = tangara-chilensis
-        syntax-theme = 1337
+	features = tangara-chilensis
+	syntax-theme = 1337
 	navigate = true    # use n and N to move between diff
 	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-        side-by-side = true
+	side-by-side = true
 [merge]
-        conflictstyle = zdiff3 
+	conflictstyle = zdiff3 
