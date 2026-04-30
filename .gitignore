@@ -32,3 +32,7 @@
 /.config/xsettingsd/
 /.config/uv/uv-receipt.json
 .config/TASCAM
+.config/wireshark
+.config/timehunt
+.config/lazytail
+.config/tmuxai
