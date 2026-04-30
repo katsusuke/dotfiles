@@ -70,7 +70,9 @@ export DISABLE_MICROCOMPACT=1
 # Azure size
 export AZURE_SIZE=Standard_A0
 
-eval "$(~/.local/bin/mise activate zsh)"
+# eval "$(~/.local/bin/mise activate zsh)"
+# sims モードじゃないと claude code が認識しない
+eval "$(~/.local/bin/mise activate zsh --shims)" 
 
 # pipenv
 #eval "$(pipenv --completion)"
@@ -85,6 +87,9 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
+
+# Erlang
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 
 function peco-select-gitadd() {
@@ -141,3 +146,6 @@ export FZF_DEFAULT_OPTS='--layout=reverse --border --height 100%'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . "$HOME/.local/bin/env"
+
+# Added by Antigravity
+export PATH="/Users/katsusuke/.antigravity/antigravity/bin:$PATH"
