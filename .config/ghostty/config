@@ -1,0 +1,5 @@
+background-opacity = 0.85
+scrollback-limit = 1000000000
+shell-integration = zsh
+
+font-size = 13
