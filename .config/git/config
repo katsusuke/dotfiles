@@ -3,12 +3,12 @@
 	name = Katsusuke Shimizu
 [core]
 	pager = delta
-	editor = emacs
+	editor = vi
 	quotepath = false
 	excludesfile = ~/.config/git/ignore
 	precomposeunicode = true
 	autocrlf = false
-	
+
 [column]
 	ui = auto
 [rebase]
@@ -37,7 +37,6 @@
 	c = commit
 	a = add
 	p = push
-	pp = pull -p
 	push-f = push --force-with-lease
 	rs = restore
 [filter "media"]
@@ -70,4 +69,6 @@
 	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 	side-by-side = true
 [merge]
-	conflictstyle = zdiff3 
+	conflictstyle = zdiff3
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials
