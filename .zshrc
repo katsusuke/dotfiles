@@ -50,6 +50,7 @@ elif [[ -d /usr/local/bin/brew ]]; then
 fi
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_INSTALL_CLEANUP=1
 
 export PAGER='less -X'
 export EDITOR=E
